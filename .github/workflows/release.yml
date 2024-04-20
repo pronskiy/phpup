@@ -18,14 +18,20 @@ jobs:
       - name: Install PHP deps
         uses: ramsey/composer-install@v2
         
-      - name: Install Box
+      - name: Build
         run: |
           curl -O "https://github.com/box-project/box/releases/download/4.6.1/box.phar" 
           mv box.phar box
-        
-      - name: Build
-        run: bash build.sh
-        
+          
+          php box compile
+          mkdir -p ./build
+          mv index.phar ./build/
+  
+          cd build || exit
+          curl -O https://dl.static-php.dev/static-php-cli/common/php-8.3.4-micro-macos-aarch64.tar.gz -C -
+          tar -xvf php-8.3.4-micro-macos-aarch64.tar.gz
+          cat ./micro.sfx ./index.phar > ./phpup && chmod 0755 ./phpup
+                
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
