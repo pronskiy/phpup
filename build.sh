@@ -1,7 +1,7 @@
 rm -rf ./build/phpup     
 rm -rf ./build/index.*
      
-box compile
+php box compile
 mkdir -p ./build
 mv index.phar ./build/
 

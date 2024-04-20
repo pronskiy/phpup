@@ -18,6 +18,9 @@ jobs:
       - name: Install PHP deps
         uses: ramsey/composer-install@v2
         
+      - name: Install Box
+        run: wget -O box "https://github.com/box-project/box/releases/download/4.6.1/box.phar"
+        
       - name: Build
         run: bash build.sh
         
