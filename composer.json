@@ -1,19 +1,19 @@
 {
-  "name": "vendor_name/phpup",
-  "description": "description",
-  "minimum-stability": "stable",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "pronskiy",
-      "email": "email@example.com"
-    }
+  "name": "pronskiy/phpup",
+  "description": "The PHP toolchain installer",
+  "keywords": [
+    "php",
+    "toolchain",
+    "composer"
   ],
+  "license": "MIT",
+  "minimum-stability": "stable",
   "require": {
     "php": "^8.3",
     "composer/composer": "^2.7.3",
     "symfony/var-dumper": "^v7.0.6",
-    "cweagans/composer-patches": "^2.0.0-beta2"
+    "cweagans/composer-patches": "^2.0.0-beta2",
+    "pronskiy/locus": "^0.2"
   },
   "require-dev": {
   },
@@ -29,7 +29,8 @@
   },
   "config": {
     "allow-plugins": {
-      "cweagans/composer-patches": true
+      "cweagans/composer-patches": true,
+      "pronskiy/locus": false
     }
   }
 }
