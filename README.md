@@ -4,6 +4,9 @@ _Phpup_ is a one-file binary with _**zero dependencies**_ that includes Composer
 
 You don't need to have PHP or anything at all on your system to run it.
 
+> ⚠️ **Under heavy development**   
+> Currently, this is an MVP, and only macOS aarch64 is supported.
+
 ## Installation
 
 Download `phpup` binary from the release page and put it into a directory on your PATH, so you can simply call `phpup` from any directory.
