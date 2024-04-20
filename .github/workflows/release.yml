@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build
-        run: build.sh
+        run: bash build.sh
 #      - name: Test
 #        run: cat Release.txt
       - name: Release
