@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,7 +19,7 @@ jobs:
         uses: ramsey/composer-install@v2
         
       - name: Install Box
-        run: wget -O box "https://github.com/box-project/box/releases/download/4.6.1/box.phar"
+        run: curl -O "https://github.com/box-project/box/releases/download/4.6.1/box.phar"; mv box.phar box
         
       - name: Build
         run: bash build.sh
