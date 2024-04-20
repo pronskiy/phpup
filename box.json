@@ -1,0 +1,11 @@
+{
+  "files": [
+    
+  ],
+  "files-bin": [
+    "vendor/bin/var-dump-server"
+  ],
+  "directories": [
+    "vendor"
+  ]
+}

@@ -1,0 +1,13 @@
+diff --git a/Resources/bin/var-dump-server b/Resources/bin/var-dump-server
+index f398fce..e69d32e 100755
+--- a/Resources/bin/var-dump-server
++++ b/Resources/bin/var-dump-server
+@@ -11,7 +11,7 @@
+  */
+ 
+ if ('cli' !== PHP_SAPI) {
+-    throw new Exception('This script must be run from the command line.');
++//    throw new Exception('This script must be run from the command line.');
+ }
+ 
+ /**

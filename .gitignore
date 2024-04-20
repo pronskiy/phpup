@@ -1,0 +1,5 @@
+/vendor/
+/build/
+/.box_dump/
+/tmp/
+/composer.lock

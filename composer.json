@@ -1,0 +1,35 @@
+{
+  "name": "vendor_name/phpup",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "pronskiy",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "composer/composer": "^2.7.3",
+    "symfony/var-dumper": "^v7.0.6",
+    "cweagans/composer-patches": "^2.0.0-beta2"
+  },
+  "require-dev": {
+  },
+  "extra": {
+    "patches": {
+      "symfony/var-dumper": {
+        "Fix SAPI": "patches/symfony/var-dumper.patch"
+      },
+      "composer/composer": {
+        "Fix SAPI": "patches/composer/composer.patch"
+      }
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "cweagans/composer-patches": true
+    }
+  }
+}
