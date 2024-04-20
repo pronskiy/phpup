@@ -1,4 +1,4 @@
-# Phpup: the PHP toolchain installer
+# Phpup: the PHP toolchain
 
 _Phpup_ is a one-file binary with _**zero dependencies**_ that includes Composer and other PHP tools. It also allows to install a per-project PHP based on your `composer.json`.
 
