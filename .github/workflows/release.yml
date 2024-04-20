@@ -19,7 +19,9 @@ jobs:
         uses: ramsey/composer-install@v2
         
       - name: Install Box
-        run: curl -O "https://github.com/box-project/box/releases/download/4.6.1/box.phar"; mv box.phar box
+        run: |
+          curl -O "https://github.com/box-project/box/releases/download/4.6.1/box.phar" 
+          mv box.phar box
         
       - name: Build
         run: bash build.sh
