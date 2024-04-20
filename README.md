@@ -12,7 +12,7 @@ You don't need to have PHP or anything at all on your system to run it.
 Download `phpup` binary from the release page and put it into a directory on your PATH, so you can simply call `phpup` from any directory.
 
 ```bash
-curl -O https://github.com/pronskiy/phpup/releases/latest/download/phpup
+curl -OL https://github.com/pronskiy/phpup/releases/latest/download/phpup
 chmod +x phpup
 sudo mv phpup /usr/local/bin/phpup
 ```

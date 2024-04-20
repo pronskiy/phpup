@@ -20,7 +20,7 @@ jobs:
         
       - name: Build
         run: |
-          curl -O "https://github.com/box-project/box/releases/download/4.6.1/box.phar" 
+          curl -OL "https://github.com/box-project/box/releases/latest/download/box.phar" 
           mv box.phar box
           
           php box compile
@@ -28,7 +28,7 @@ jobs:
           mv index.phar ./build/
   
           cd build || exit
-          curl -O https://dl.static-php.dev/static-php-cli/common/php-8.3.4-micro-macos-aarch64.tar.gz -C -
+          curl -OL https://dl.static-php.dev/static-php-cli/common/php-8.3.4-micro-macos-aarch64.tar.gz -C -
           tar -xvf php-8.3.4-micro-macos-aarch64.tar.gz
           cat ./micro.sfx ./index.phar > ./phpup && chmod 0755 ./phpup
                 
