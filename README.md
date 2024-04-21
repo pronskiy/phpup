@@ -4,7 +4,8 @@ _Phpup_ is a single-file binary with _**zero dependencies**_ that includes Compo
 
 You don't need to have PHP or anything at all on your system to run it.
 
-> ⚠️ **Under heavy development** ⚠️   
+> [!WARNING] 
+> **Under heavy development**  
 > Currently, this is an MVP, and only macOS aarch64 is supported.
 
 ## Installation
