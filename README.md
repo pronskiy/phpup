@@ -37,6 +37,7 @@ See some ideas in the todo list below.
   - [ ] Rector
   - [ ] PHPStan
   - [ ] PHP-CS-Fixer
+  - [ ] PHPUnit
 - [ ] Extract packing with box and micro php to a stand-alone GitHub action
 - [ ] Reduce size of the resulting binary
 - [ ] Check microphp's [patches](https://github.com/easysoft/phpmicro/blob/master/patches/Readme.md):
