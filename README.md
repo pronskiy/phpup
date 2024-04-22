@@ -26,7 +26,7 @@ sudo mv phpup /usr/local/bin/phpup
 
 ## Contributing
 
-Contributions are very welcome! If the changes are big, it's better to create an issue describing the idea first – let's find consensus first.
+Contributions are very welcome! However, it's recommended to first create an issue describing the idea — let's find the best approach together.
 
 See some ideas in the todo list below.
 
