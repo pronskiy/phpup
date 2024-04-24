@@ -33,6 +33,8 @@ See some ideas in the todo list below.
 ### TODO
 - [ ] Support Windows
 - [ ] Support Linux
+- [ ] Run php script https://github.com/pronskiy/phpup/issues/1
+- [ ] Add help command
 - [ ] Add more tools
   - [ ] Rector
   - [ ] PHPStan
