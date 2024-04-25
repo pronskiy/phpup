@@ -1,6 +1,6 @@
-<p align="center">
-    <h1><code lang="html">phpup</code><br>The PHP Toolchain</h1>
-</p>
+<h1 align="center">
+    <code lang="html">phpup</code><br>The PHP Toolchain
+</h1>
 
 ---
 
