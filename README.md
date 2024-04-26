@@ -2,7 +2,7 @@
     <code lang="html">phpup</code><br>The PHP Toolchain
 </h1>
 
-_Phpup_ is a single-file binary with _**zero dependencies**_ that includes Composer and other PHP tools. It also allows to install a per-project PHP based on your `composer.json`.
+_Phpup_ is a single-file binary with _**zero dependencies**_ that includes Composer and other PHP tools. It also allows installing a per-project PHP based on your `composer.json`.
 
 You don't need to have PHP or anything at all on your system to run it.
 
