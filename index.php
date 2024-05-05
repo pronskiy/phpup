@@ -19,10 +19,14 @@ if ('list' === $command) {
     exit;
 }
 
+array_shift($_SERVER['argv']);
+
 $pathToBinary = $vendorBinPath . $command;
 if (file_exists($pathToBinary)) {
-    array_shift($_SERVER['argv']);
     require_once $pathToBinary;
+    exit;
+} else if (file_exists($command)) {
+    require_once $command;
     exit;
 }
 exit(1);
