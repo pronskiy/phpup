@@ -1,5 +1,7 @@
 <?php
 
+const PHPUP_VERSION = '0.2.0';
+
 if (!isset($argv[1])) {
     echo "Not enough arguments \n";
     exit(1);
@@ -19,6 +21,11 @@ if ('list' === $command) {
         if ($file === '.' || $file === '..') { continue; }
         echo $file . "\n";
     }
+    exit;
+}
+
+if ('--version' === $command) {
+    echo 'phpup v', PHPUP_VERSION, ', with PHP v', PHP_VERSION, "\n";
     exit;
 }
 
