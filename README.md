@@ -23,7 +23,10 @@ sudo mv phpup /usr/local/bin/phpup
 ## Usage
 
 - `phpup list` – See the list of available commands. 
+- `phpup <file>` – Run any php file.
 - `phpup composer` – Composer that does not require PHP to be installed.
+- `phpup phpstan` – PHPStan that does not require PHP.
+- `phpup rector` – Rector that does not require PHP.
 - `phpup locus` – Installs PHP binary under your project's `vendor/bin/php` based on the requirements in _composer.json_.
 
 ## Contributing
@@ -35,13 +38,14 @@ See some ideas in the todo list below.
 ### TODO
 - [ ] Support Windows
 - [ ] Support Linux
-- [ ] Run php script https://github.com/pronskiy/phpup/issues/1
+- [x] Run php script https://github.com/pronskiy/phpup/issues/1
 - [ ] Add help command
 - [ ] Add more tools
-  - [ ] Rector
-  - [ ] PHPStan
+  - [x] Rector
+  - [x] PHPStan
   - [ ] PHP-CS-Fixer
   - [ ] PHPUnit
+- [ ] Support parallel run for Rector
 - [ ] Extract packing with box and micro php to a stand-alone GitHub action
 - [ ] Reduce size of the resulting binary
 - [ ] Check microphp's [patches](https://github.com/easysoft/phpmicro/blob/master/patches/Readme.md):
