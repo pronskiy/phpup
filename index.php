@@ -5,7 +5,9 @@ if (!isset($argv[1])) {
     exit(1);
 }
 
+// @TODO Handle restart
 putenv("COMPOSER_ALLOW_XDEBUG=1");
+putenv("PHPSTAN_ALLOW_XDEBUG=1");
 
 $command = escapeshellcmd($argv[1]);
 $vendorBinPath = __DIR__ . '/vendor/bin/';
