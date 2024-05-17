@@ -4,3 +4,4 @@
 /tmp/
 /composer.lock
 /patches.lock.json
+/.idea
