@@ -8,7 +8,7 @@ You don't need to have PHP or anything at all on your system to run it.
 
 > [!WARNING] 
 > **Under heavy development**  
-> Currently, this is an MVP, and only macOS aarch64 is supported.
+> Currently, this is an MVP, and only macOS and linux are supported.
 
 ## Installation
 
@@ -54,7 +54,7 @@ See some ideas in the todo list below.
   - [ ] Bypass cli SAPI name checks
   - [ ] static_opcache
 - [ ] Support parallel run for Rector
-- [ ] Support Linux
+- [ ] Support Linux 🚧
 
 ## Credits
 
