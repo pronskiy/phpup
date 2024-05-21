@@ -7,12 +7,18 @@ mv index.phar ./build/
 
 cd build || exit
 
-OS=`uname -a|awk '{print $1}'`
-arch=`uname -m|awk '{print $1}'`
+if ! command -v uname &> /dev/null
+then
+    OS="OS"
+else
+  OS=`uname -a|awk '{print $1}'`
+  arch=`uname -m|awk '{print $1}'`
+fi
+
 case $OS in
     "Darwin" ) curl -o php "https://dl.static-php.dev/static-php-cli/common/php-8.3.6-micro-macos-${arch}.tar.gz" -C -;;
     "Linux" ) curl -o php "https://dl.static-php.dev/static-php-cli/common/php-8.3.6-micro-linux-${arch}.tar.gz" -C -;;
-    * ) echo "OS is not supported"
+    * ) echo "${OS} is not supported"
       exit ;;
 esac
 tar -xvf php
