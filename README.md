@@ -29,6 +29,13 @@ sudo mv phpup /usr/local/bin/phpup
 - `phpup rector` – Rector that does not require PHP. 🚧
 - `phpup locus` – Installs PHP binary under your project's `vendor/bin/php` based on the requirements in _composer.json_.
 
+## Building
+### Build requirements
+
+* https://github.com/box-project/box
+* PHP 8.3
+* Composer
+
 ## Contributing
 
 Contributions are very welcome! However, it's recommended to first create an issue describing the idea — let's find the best approach together.
