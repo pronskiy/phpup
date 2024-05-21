@@ -3,7 +3,7 @@ name: Release
 on: push
 
 jobs:
-  build:
+  build-macos:
     runs-on: macos-latest
     steps:
       - name: Checkout
@@ -20,18 +20,45 @@ jobs:
         
       - name: Build
         run: |
-          curl -OL "https://github.com/box-project/box/releases/latest/download/box.phar" 
-          mv box.phar box
-          
-          php box compile
-          mkdir -p ./build
-          mv index.phar ./build/
-  
-          cd build || exit
-          curl -OL https://dl.static-php.dev/static-php-cli/common/php-8.3.6-micro-macos-aarch64.tar.gz -C -
-          tar -xvf php-8.3.6-micro-macos-aarch64.tar.gz
-          cat ./micro.sfx ./index.phar > ./phpup && chmod 0755 ./phpup
+          brew tap box-project/box
+          brew install box
+          ./build.sh
                 
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            build/phpup
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          tools: composer:v2
+
+      - name: Install PHP deps
+        uses: ramsey/composer-install@v2
+        run:
+          wget -O phive.phar "https://phar.io/releases/phive.phar"
+          wget -O phive.phar.asc "https://phar.io/releases/phive.phar.asc"
+          gpg --keyserver hkps://keys.openpgp.org --recv-keys 0x6AF725270AB81E04D79442549D8A98B29B2D5D79
+          gpg --verify phive.phar.asc phive.phar
+          rm phive.phar.asc
+          chmod +x phive.phar
+          mv phive.phar /usr/local/bin/phive
+          phive install humbug/box
+
+      - name: Build
+        run: |
+          ./build.sh
+
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
