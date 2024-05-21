@@ -8,7 +8,7 @@ You don't need to have PHP or anything at all on your system to run it.
 
 > [!WARNING] 
 > **Under heavy development**  
-> Currently, this is an MVP, and only macOS aarch64 is supported.
+> Currently, this is an MVP, and only macOS and linux are supported.
 
 ## Installation
 
@@ -28,6 +28,13 @@ sudo mv phpup /usr/local/bin/phpup
 - `phpup phpstan` – PHPStan that does not require PHP. 🚧
 - `phpup rector` – Rector that does not require PHP. 🚧
 - `phpup locus` – Installs PHP binary under your project's `vendor/bin/php` based on the requirements in _composer.json_.
+
+## Building
+### Build requirements
+
+* https://github.com/box-project/box
+* PHP 8.3
+* Composer
 
 ## Contributing
 
@@ -54,7 +61,7 @@ See some ideas in the todo list below.
   - [ ] Bypass cli SAPI name checks
   - [ ] static_opcache
 - [ ] Support parallel run for Rector
-- [ ] Support Linux
+- [ ] Support Linux 🚧
 
 ## Credits
 
