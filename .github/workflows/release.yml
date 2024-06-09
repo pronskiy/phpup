@@ -22,15 +22,7 @@ jobs:
         run: |
           curl -OL "https://github.com/box-project/box/releases/latest/download/box.phar" 
           mv box.phar box
-          
-          php box compile
-          mkdir -p ./build
-          mv index.phar ./build/
-  
-          cd build || exit
-          curl -OL https://dl.static-php.dev/static-php-cli/common/php-8.3.6-micro-macos-aarch64.tar.gz -C -
-          tar -xvf php-8.3.6-micro-macos-aarch64.tar.gz
-          cat ./micro.sfx ./index.phar > ./phpup && chmod 0755 ./phpup
+          make build
                 
       - name: Release
         uses: softprops/action-gh-release@v2
