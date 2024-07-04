@@ -25,9 +25,11 @@ sudo mv phpup /usr/local/bin/phpup
 - `phpup list` – See the list of available commands. 
 - `phpup <file>` – Run any php file. 🚧
 - `phpup composer` – Composer that does not require PHP to be installed.
-- `phpup phpstan` – PHPStan that does not require PHP. 🚧
-- `phpup rector` – Rector that does not require PHP. 🚧
+- `phpup conductor <command>` – Like npx but for PHP. 🚧
 - `phpup locus` – Installs PHP binary under your project's `vendor/bin/php` based on the requirements in _composer.json_.
+
+- ~~`phpup phpstan` – PHPStan that does not require PHP. 🚧~~
+- ~~`phpup rector` – Rector that does not require PHP. 🚧~~
 
 ## Contributing
 
@@ -38,23 +40,28 @@ See some ideas in the todo list below.
 ### TODO
 - [x] Run php script https://github.com/pronskiy/phpup/issues/1
 
-- [ ] Support Rector 🚧
-- [ ] Support PHPStan 🚧
 - [ ] Accept a reference to a packagist/gh repo, to be able to run its scripts/bin/
     -  https://twitter.com/AdrienBrault/status/1782476060426179049
     -  https://twitter.com/pronskiy/status/1768219585151402251
+
 - [ ] Support Windows
+- [ ] Support Linux
+
+- [ ] Make symfony/console app
 - [ ] Add help command
+
 - [ ] Extract packing with box and micro php to a stand-alone GitHub action
-- [ ] Add more tools
-  - [ ] PHP-CS-Fixer
-  - [ ] PHPUnit
 - [ ] Reduce size of the resulting binary
 - [ ] Check microphp's [patches](https://github.com/easysoft/phpmicro/blob/master/patches/Readme.md):
   - [ ] Bypass cli SAPI name checks
   - [ ] static_opcache
-- [ ] Support parallel run for Rector
-- [ ] Support Linux
+
+- ~~[ ] Add more tools~~
+  - ~~[ ] PHP-CS-Fixer~~
+  - ~~[ ] PHPUnit~~
+- ~~[ ] Support Rector 🚧~~
+- ~~[ ] Support PHPStan 🚧~~
+
 
 ## Credits
 
