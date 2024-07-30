@@ -43,6 +43,9 @@ See some ideas in the todo list below.
 - [ ] Accept a reference to a packagist/gh repo, to be able to run its scripts/bin/
     -  https://twitter.com/AdrienBrault/status/1782476060426179049
     -  https://twitter.com/pronskiy/status/1768219585151402251
+    -  https://github.com/artisan-build/conductor
+    -  https://github.com/pronskiy/conductor
+    -  https://github.com/artisan-build/conductor/issues/8
 
 - [ ] Support Windows
 - [ ] Support Linux
