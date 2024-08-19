@@ -52,14 +52,14 @@ make build
 
 ### TODO
 
-- [x] Run php script <https://github.com/pronskiy/phpup/issues/1>
+- [x] Run php script [https://github.com/pronskiy/phpup/issues/1](https://github.com/pronskiy/phpup/issues/1)
 
 - [ ] Accept a reference to a packagist/gh repo, to be able to run its scripts/bin/
-  - <https://twitter.com/AdrienBrault/status/1782476060426179049>
-  - <https://twitter.com/pronskiy/status/1768219585151402251>
-  - <https://github.com/artisan-build/conductor>
-  - <https://github.com/pronskiy/conductor>
-  - <https://github.com/artisan-build/conductor/issues/8>
+  - [https://twitter.com/AdrienBrault/status/1782476060426179049](https://twitter.com/AdrienBrault/status/1782476060426179049)
+  - [https://twitter.com/pronskiy/status/1768219585151402251](https://twitter.com/pronskiy/status/1768219585151402251)
+  - [https://github.com/artisan-build/conductor](https://github.com/artisan-build/conductor)
+  - [https://github.com/pronskiy/conductor](https://github.com/pronskiy/conductor)
+  - [https://github.com/artisan-build/conductor/issues/8](https://github.com/artisan-build/conductor/issues/8)
 
 - [ ] Support Windows
 - [ ] Support Linux
@@ -81,4 +81,4 @@ make build
 
 ## Credits
 
-This package entirely relies on <https://github.com/static-php> and <https://github.com/easysoft/phpmicro>.
+This package entirely relies on [https://github.com/static-php](https://github.com/static-php) and [https://github.com/easysoft/phpmicro](https://github.com/easysoft/phpmicro).
