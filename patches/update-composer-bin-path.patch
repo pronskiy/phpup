@@ -1,0 +1,69 @@
+--- a/vendor/artisan-build/conductor/app/Services/Package.php
++++ b/vendor/artisan-build/conductor/app/Services/Package.php
+@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Process;
+ 
+ class Package
+ {
++    private static string $composerBinPath = 'composer';
++
+     const LOCALLY = 'local';
+ 
+     const GLOBALLY = 'global';
+@@ -19,6 +21,11 @@ class Package
+ 
+     public readonly string $name;
+ 
+     public readonly array $latest_data;
++
++    public static function setComposerBinPath(string $path): void
++    {
++        self::$composerBinPath = $path;
++    }
+ 
+     /**
+      * Create a package instance from a package name.
+@@ -89,13 +96,13 @@ class Package
+ 
+     public function isInstalledLocally(): bool
+     {
+-        exec("composer show {$this->name} 2>&1", $output, $return_code);
++        exec(self::$composerBinPath . " show {$this->name} 2>&1", $output, $return_code);
+ 
+         return $return_code === 0;
+     }
+ 
+     public function isInstalledGlobally(): bool
+     {
+-        exec("composer global show {$this->name} 2>&1", $output, $return_code);
++        exec(self::$composerBinPath . " global show {$this->name} 2>&1", $output, $return_code);
+ 
+         return $return_code === 0;
+     }
+@@ -103,7 +110,7 @@ class Package
+     public function installGlobally(): int
+     {
+-        $cmd = "composer global require {$this->name}";
++        $cmd = self::$composerBinPath . " global require {$this->name}";
+         if ($this->isDev()) {
+             $cmd .= ' --dev';
+         }
+@@ -114,7 +121,7 @@ class Package
+ 
+     public function uninstallGlobally(): int
+     {
+-        $cmd = "composer global uninstall {$this->name}";
++        $cmd = self::$composerBinPath . " global uninstall {$this->name}";
+         if ($this->isDev()) {
+             $cmd .= ' --dev';
+         }
+@@ -136,8 +143,8 @@ class Package
+             ->map(fn (string $option): string => "--{$option}")
+             ->implode(' ');
+         $cmd = str(match ($context) {
+-            self::GLOBALLY => 'composer global exec',
+-            self::LOCALLY => 'composer exec',
++            self::GLOBALLY => self::$composerBinPath . ' global exec',
++            self::LOCALLY => self::$composerBinPath . ' exec',
+             default => throw new Exception('invalid context'),
+         })->append(" {$binary} {$command} {$arguments} {$options}")->toString();
+         $result = Process::forever()->tty()->run($cmd);

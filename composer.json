@@ -8,21 +8,14 @@
   ],
   "license": "MIT",
   "minimum-stability": "dev",
-
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/pronskiy/conductor"
-    }
-  ],
-  
   "require": {
     "php": "^8.3",
     "composer/composer": "^2.7.3",
     "symfony/var-dumper": "^v7.0.6",
     "cweagans/composer-patches": "^2.0.0-beta2",
     "pronskiy/locus": "^0.2",
-    "artisan-build/conductor": "@dev"
+    "artisan-build/conductor": "^0.2.0",
+    "symfony/console": "^7.0.6"
   },
   "extra": {
     "patches": {
@@ -31,13 +24,20 @@
       },
       "composer/composer": {
         "Fix SAPI": "patches/composer/composer.patch"
+      },
+      "artisan-build/conductor": {
+        "Update composer bin path": "patches/update-composer-bin-path.patch"
       }
     }
   },
   "config": {
     "allow-plugins": {
       "cweagans/composer-patches": true,
-      "pronskiy/locus": false
+      "pronskiy/locus": false,
+      "bamarni/composer-bin-plugin": true
     }
+  },
+  "require-dev": {
+    "bamarni/composer-bin-plugin": "dev-master"
   }
 }
