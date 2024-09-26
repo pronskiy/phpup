@@ -13,16 +13,13 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.3
-          tools: composer:v2
+          tools: composer:v2, box
 
       - name: Install PHP deps
         uses: ramsey/composer-install@v3
         
       - name: Build
-        run: |
-          curl -OL "https://github.com/box-project/box/releases/latest/download/box.phar" 
-          mv box.phar box
-          make build
+        run: make build
                 
       - name: Release
         uses: softprops/action-gh-release@v2
