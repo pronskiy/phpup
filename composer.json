@@ -11,8 +11,8 @@
 
   "repositories": [
     {
-      "type": "vcs",
-      "url": "https://github.com/pronskiy/conductor"
+      "type": "git",
+      "url": "https://github.com/pronskiy/conductor.git"
     }
   ],
   
